@@ -62,12 +62,12 @@ find "$SAMPLE_DATA_DIR" -type f -iname '*.mp3' -exec lame --silent -b $TARGET_MP
 #find "$SAMPLE_DATA_DIR" -type f -iname '*.mp3' -exec rm "{}" \; -exec touch "{}" \;
 
 echo "Building new sample data archive..."
-tar -cjf "../$SAMPLE_DATA_DIR.tbz" "$SAMPLE_DATA_DIR"
+tar -czf "../$SAMPLE_DATA_DIR.tgz" "$SAMPLE_DATA_DIR"
 cd .. # get out of the tmp-work-dir
 rm -r "$WORK_DIR"
 
-NEW_SIZE=$(du -sh "$SAMPLE_DATA_DIR.tbz" | awk '{ print $1 }');
-echo "New compressed sample data archive: $SAMPLE_DATA_DIR.tbz"
+NEW_SIZE=$(du -sh "$SAMPLE_DATA_DIR.tgz" | awk '{ print $1 }');
+echo "New compressed sample data archive: $SAMPLE_DATA_DIR.tgz"
 echo "Original size:   $ORIG_SIZE"
 echo "Compressed size: $NEW_SIZE"
 
