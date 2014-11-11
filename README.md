@@ -1,8 +1,9 @@
 # Compressed Magento 1.9.0.0 Sample Data
 
 Its kind of ridiculous having a sample data package that is 317MB in size, and since I couldn't find
-a good alternative source, so I decided to hack together a little script to compress the hell out of the images and the MP3 files
-in the sample data archive, so it can be downloaded and used more easily.
+a good alternative source, I decided to hack together a little script to compress the hell out of the images and the MP3 files
+in the sample data archive.  
+My intention is that it can be downloaded faster and used more easily.
 
 With a image quality setting of 50% and resampling all mp3 files with a bitrate of 48, the size of the sample data is down to 66M.
 
