@@ -1,4 +1,4 @@
-# Compressed Magento 1.9.0.0 Sample Data
+# Compressed Magento 1.9 Sample Data
 
 The following variations are available:
 
