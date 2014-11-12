@@ -16,7 +16,3 @@ The following variations are available:
 
 The compression script is intended to run on OS X. Feel free to use and modify it, but be aware that you are doing so at your own risk!
 
-**Note:**  
-If you don't want to have the .mp3 files in there at all you can save another 40MB by running the command
-
-    find magento-sample-data-1.9.0.0 -type f -iname '*.mp3' -exec rm "{}" \; -exec touch "{}" \;
