@@ -5,7 +5,6 @@ The following variations are available:
 * 67M [compressed-magento-sample-data-1.9.0.0.tgz](https://raw.githubusercontent.com/Vinai/compressed-magento-sample-data/master/compressed-magento-sample-data-1.9.0.0.tgz)
 * 66M [compressed-magento-sample-data-1.9.0.0.tbz](https://raw.githubusercontent.com/Vinai/compressed-magento-sample-data/master/compressed-magento-sample-data-1.9.0.0.tbz)
 * 41M [compressed-magento-sample-data-1.9.0.0.tar.7z](https://raw.githubusercontent.com/Vinai/compressed-magento-sample-data/master/compressed-magento-sample-data-1.9.0.0.tar.7z)
-
 * 28M [compressed-no-mp3-magento-sample-data-1.9.0.0.tgz](https://raw.githubusercontent.com/Vinai/compressed-magento-sample-data/master/compressed-no-mp3-magento-sample-data-1.9.0.0.tgz)
 * 26M [compressed-no-mp3-magento-sample-data-1.9.0.0.tbz](https://raw.githubusercontent.com/Vinai/compressed-magento-sample-data/master/compressed-no-mp3-magento-sample-data-1.9.0.0.tbz)
 * 20M [compressed-no-mp3-magento-sample-data-1.9.0.0.tar.7z](https://raw.githubusercontent.com/Vinai/compressed-magento-sample-data/master/compressed-no-mp3-magento-sample-data-1.9.0.0.tar.7z)
