@@ -63,6 +63,7 @@ find "$SAMPLE_DATA_DIR" -type f -iname '*.mp3' -exec lame --silent -b $TARGET_MP
 
 echo "Building new sample data archive..."
 tar -czf "../$SAMPLE_DATA_DIR.tgz" "$SAMPLE_DATA_DIR"
+#tar cf - "$SAMPLE_DATA_DIR" | 7za a -si "$SAMPLE_DATA_DIR".tar.7z
 cd .. # get out of the tmp-work-dir
 rm -r "$WORK_DIR"
 
