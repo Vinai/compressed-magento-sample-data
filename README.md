@@ -2,8 +2,6 @@
 
 The following variations are available:
 
-                                                   https://raw.githubusercontent.com/Vinai/compressed-magento-sample-data/1.9.1.0/compressed-magento-sample-data-1.9.1.0.tbz
-
 * 66M [compressed-magento-sample-data-1.9.1.0.tgz](https://raw.githubusercontent.com/Vinai/compressed-magento-sample-data/1.9.1.0/compressed-magento-sample-data-1.9.1.0.tgz)
 * 65M [compressed-magento-sample-data-1.9.1.0.tbz](https://raw.githubusercontent.com/Vinai/compressed-magento-sample-data/1.9.1.0/compressed-magento-sample-data-1.9.1.0.tbz)
 * 40M [compressed-magento-sample-data-1.9.1.0.tar.7z](https://raw.githubusercontent.com/Vinai/compressed-magento-sample-data/1.9.1.0/compressed-magento-sample-data-1.9.1.0.tar.7z)
