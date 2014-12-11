@@ -57,9 +57,6 @@ echo "Compressing images..."
 find "$SAMPLE_DATA_DIR" -type f \( -iname '*.jpg' -o -iname '*.png' -o -iname '*.gif' \) -exec convert -quality $TARGET_IMAGE_QUALITY_PERCENTAGE "{}" "{}" \; -exec open -a ImageOptim.app "{}" \;
 echo "Compressing mp3 files..."
 find "$SAMPLE_DATA_DIR" -type f -iname '*.mp3' -exec lame --silent -b $TARGET_MP3_BITRATE "{}" "{}.out" \; -exec mv "{}.out" "{}" \;
-# Enable this instead of the above two lines to get rid of the mp3 files and save another 40MB
-#echo "Removing MP3 files"
-#find "$SAMPLE_DATA_DIR" -type f -iname '*.mp3' -exec rm "{}" \; -exec touch "{}" \;
 
 echo "Building new sample data archive compressed-$SAMPLE_DATA_DIR.tgz..."
 tar -czf "../compressed-$SAMPLE_DATA_DIR.tgz" "$SAMPLE_DATA_DIR"
