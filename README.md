@@ -18,4 +18,4 @@ With a image quality setting of 50% and by sampling all .mp3 files down to a bit
 
 The compression script in the src/ directory is intended to run on OS X. Feel free to use and modify it, but be aware that you are doing so at your own risk!
 
-Please check the 1.9.0.0 tag for the previous version of the sample data.
+Please check the 1.9.0.0 branch for the previous version of the sample data.
