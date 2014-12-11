@@ -2,12 +2,12 @@
 
 The following variations are available:
 
-* 66M [compressed-magento-sample-data-1.9.0.0.tbz](https://raw.githubusercontent.com/Vinai/compressed-magento-sample-data/master/compressed-magento-sample-data-1.9.0.0.tbz)
-* 67M [compressed-magento-sample-data-1.9.0.0.tgz](https://raw.githubusercontent.com/Vinai/compressed-magento-sample-data/master/compressed-magento-sample-data-1.9.0.0.tgz)
-* 41M [compressed-magento-sample-data-1.9.0.0.tar.7z](https://raw.githubusercontent.com/Vinai/compressed-magento-sample-data/master/compressed-magento-sample-data-1.9.0.0.tar.7z)
-* 26M [compressed-no-mp3-magento-sample-data-1.9.0.0.tbz](https://raw.githubusercontent.com/Vinai/compressed-magento-sample-data/master/compressed-no-mp3-magento-sample-data-1.9.0.0.tbz)
-* 28M [compressed-no-mp3-magento-sample-data-1.9.0.0.tgz](https://raw.githubusercontent.com/Vinai/compressed-magento-sample-data/master/compressed-no-mp3-magento-sample-data-1.9.0.0.tgz)
-* 20M [compressed-no-mp3-magento-sample-data-1.9.0.0.tar.7z](https://raw.githubusercontent.com/Vinai/compressed-magento-sample-data/master/compressed-no-mp3-magento-sample-data-1.9.0.0.tar.7z)
+* 65M [compressed-magento-sample-data-1.9.1.0.tbz](https://raw.githubusercontent.com/Vinai/compressed-magento-sample-data/master/compressed-magento-sample-data-1.9.1.0.tbz)
+* 66M [compressed-magento-sample-data-1.9.1.0.tgz](https://raw.githubusercontent.com/Vinai/compressed-magento-sample-data/master/compressed-magento-sample-data-1.9.1.0.tgz)
+* 40M [compressed-magento-sample-data-1.9.1.0.tar.7z](https://raw.githubusercontent.com/Vinai/compressed-magento-sample-data/master/compressed-magento-sample-data-1.9.1.0.tar.7z)
+* 25M [compressed-no-mp3-magento-sample-data-1.9.1.0.tbz](https://raw.githubusercontent.com/Vinai/compressed-magento-sample-data/master/compressed-no-mp3-magento-sample-data-1.9.1.0.tbz)
+* 26M [compressed-no-mp3-magento-sample-data-1.9.1.0.tgz](https://raw.githubusercontent.com/Vinai/compressed-magento-sample-data/master/compressed-no-mp3-magento-sample-data-1.9.1.0.tgz)
+* 19M [compressed-no-mp3-magento-sample-data-1.9.1.0.tar.7z](https://raw.githubusercontent.com/Vinai/compressed-magento-sample-data/master/compressed-no-mp3-magento-sample-data-1.9.1.0.tar.7z)
 
 Its kind of ridiculous having a sample data package that is 317MB in size, and since I couldn't find
 a good alternative source, I decided to hack together a little script to compress the hell out of the images and the MP3 files
