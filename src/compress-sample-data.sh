@@ -61,14 +61,23 @@ find "$SAMPLE_DATA_DIR" -type f -iname '*.mp3' -exec lame --silent -b $TARGET_MP
 #echo "Removing MP3 files"
 #find "$SAMPLE_DATA_DIR" -type f -iname '*.mp3' -exec rm "{}" \; -exec touch "{}" \;
 
-echo "Building new sample data archive..."
-tar -czf "../$SAMPLE_DATA_DIR.tgz" "$SAMPLE_DATA_DIR"
-#tar cf - "$SAMPLE_DATA_DIR" | 7za a -si "$SAMPLE_DATA_DIR".tar.7z
+echo "Building new sample data archive compressed-$SAMPLE_DATA_DIR.tgz..."
+tar -czf "../compressed-$SAMPLE_DATA_DIR.tgz" "$SAMPLE_DATA_DIR"
+
+echo "Building new sample data archive compressed-$SAMPLE_DATA_DIR.tbz..."
+tar -cjf "../compressed-$SAMPLE_DATA_DIR.tbz" "$SAMPLE_DATA_DIR"
+
+echo "Building new sample data archive compressed-$SAMPLE_DATA_DIR.tar.7z..."
+tar cf - "$SAMPLE_DATA_DIR" | 7za a -si "../compressed-$SAMPLE_DATA_DIR.tar.7z"
+
 cd .. # get out of the tmp-work-dir
 rm -r "$WORK_DIR"
 
-NEW_SIZE=$(du -sh "$SAMPLE_DATA_DIR.tgz" | awk '{ print $1 }');
-echo "New compressed sample data archive: $SAMPLE_DATA_DIR.tgz"
+echo "New compressed sample data archive:"
 echo "Original size:   $ORIG_SIZE"
-echo "Compressed size: $NEW_SIZE"
-
+NEW_SIZE=$(du -sh "compressed-$SAMPLE_DATA_DIR.tgz" | awk '{ print $1 }');
+echo "Compressed size tgz:    $NEW_SIZE"
+NEW_SIZE=$(du -sh "compressed-$SAMPLE_DATA_DIR.tbz" | awk '{ print $1 }');
+echo "Compressed size tbz:    $NEW_SIZE"
+NEW_SIZE=$(du -sh "compressed-$SAMPLE_DATA_DIR.tar.7z" | awk '{ print $1 }');
+echo "Compressed size tar.7z: $NEW_SIZE"
