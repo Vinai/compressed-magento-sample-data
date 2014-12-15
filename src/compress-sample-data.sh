@@ -44,6 +44,7 @@ echo "Using sample data $SOURCE_ARCHIVE"
 
 ORIG_SIZE=$(du -sh "$SOURCE_ARCHIVE" | awk '{ print $1 }')
 SAMPLE_DATA_DIR=$(tar -tvzf "$SOURCE_ARCHIVE" | head -1 | awk '{ print $9 }' | xargs basename)
+IMAGE_OPTIM_PATH="$(locate ImageOptim.app/Contents/MacOS/ImageOptim)"
 
 WORK_DIR="./tmp-work-dir"
 echo "Creating temporary working dir $WORK_DIR"
@@ -54,7 +55,8 @@ tar -xzf "$SOURCE_ARCHIVE"
 echo "Removing resized images cache files"
 rm -rf "$SAMPLE_DATA_DIR"/media/catalog/product/cache/*
 echo "Compressing images..."
-find "$SAMPLE_DATA_DIR" -type f \( -iname '*.jpg' -o -iname '*.png' -o -iname '*.gif' \) -exec convert -quality $TARGET_IMAGE_QUALITY_PERCENTAGE "{}" "{}" \; -exec open -a ImageOptim.app "{}" \;
+find "$SAMPLE_DATA_DIR" -type f \( -iname '*.jpg' -o -iname '*.png' -o -iname '*.gif' \) -exec convert -quality $TARGET_IMAGE_QUALITY_PERCENTAGE "{}" "{}" \;
+$IMAGE_OPTIM_PATH 2>/dev/null "$SAMPLE_DATA_DIR"
 echo "Compressing mp3 files..."
 find "$SAMPLE_DATA_DIR" -type f -iname '*.mp3' -exec lame --silent -b $TARGET_MP3_BITRATE "{}" "{}.out" \; -exec mv "{}.out" "{}" \;
 
