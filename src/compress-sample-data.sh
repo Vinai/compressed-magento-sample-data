@@ -10,12 +10,14 @@
 # - lame
 # - grealpath
 # - curl (only for downloading the sample data)
+# - 7za
 #
 # (c) 2014 Vinai Kopp <vinai@netzarbeiter.com>
 # 
 
 TARGET_MP3_BITRATE=48
 TARGET_IMAGE_QUALITY_PERCENTAGE=50
+EXCLUDE_FILES='\._*'
 
 
 if [ -z "$1" ]; then
@@ -59,13 +61,13 @@ echo "Compressing mp3 files..."
 find "$SAMPLE_DATA_DIR" -type f -iname '*.mp3' -exec lame --silent -b $TARGET_MP3_BITRATE "{}" "{}.out" \; -exec mv "{}.out" "{}" \;
 
 echo "Building new sample data archive compressed-$SAMPLE_DATA_DIR.tgz..."
-tar -czf "../compressed-$SAMPLE_DATA_DIR.tgz" "$SAMPLE_DATA_DIR"
+tar --exclude $EXCLUDE_FILES -czf "../compressed-$SAMPLE_DATA_DIR.tgz" "$SAMPLE_DATA_DIR"
 
 echo "Building new sample data archive compressed-$SAMPLE_DATA_DIR.tbz..."
-tar -cjf "../compressed-$SAMPLE_DATA_DIR.tbz" "$SAMPLE_DATA_DIR"
+tar --exclude $EXCLUDE_FILES -cjf "../compressed-$SAMPLE_DATA_DIR.tbz" "$SAMPLE_DATA_DIR"
 
 echo "Building new sample data archive compressed-$SAMPLE_DATA_DIR.tar.7z..."
-tar cf - "$SAMPLE_DATA_DIR" | 7za a -si "../compressed-$SAMPLE_DATA_DIR.tar.7z"
+tar --exclude $EXCLUDE_FILES -cf - "$SAMPLE_DATA_DIR" | 7za a -si "../compressed-$SAMPLE_DATA_DIR.tar.7z"
 
 cd .. # get out of the tmp-work-dir
 rm -r "$WORK_DIR"
