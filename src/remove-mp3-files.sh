@@ -10,7 +10,7 @@
 # Use at your own risk!
 #
 # (c) 2014 Vinai Kopp <vinai@netzarbeiter.com>
-# 
+#
 
 if [ -z "$1" ]; then
     echo "No sample data specified"
@@ -25,8 +25,10 @@ SOURCE_ARCHIVE="$(grealpath "$1")"
 
 echo "Using sample data $SOURCE_ARCHIVE"
 
+EXCLUDE_FILES='\._*'
 SAMPLE_DATA_DIR=$(tar -tvzf "$SOURCE_ARCHIVE" | head -1 | awk '{ print $9 }' | xargs basename)
 WORK_DIR="./tmp-work-dir"
+
 echo "Creating temporary working dir $WORK_DIR"
 mkdir "$WORK_DIR" && cd "$WORK_DIR"
 echo "Extracting sample data..."
@@ -36,13 +38,13 @@ echo "Removing MP3 files"
 find "$SAMPLE_DATA_DIR" -type f -iname '*.mp3' -exec rm "{}" \; -exec touch "{}" \;
 
 echo "Building new sample data archive compressed-no-mp3-$SAMPLE_DATA_DIR.tgz..."
-tar -czf "../compressed-no-mp3-$SAMPLE_DATA_DIR.tgz" "$SAMPLE_DATA_DIR"
+tar --exclude $EXCLUDE_FILES -czf "../compressed-no-mp3-$SAMPLE_DATA_DIR.tgz" "$SAMPLE_DATA_DIR"
 
 echo "Building new sample data archive compressed-no-mp3-$SAMPLE_DATA_DIR.tbz..."
-tar -cjf "../compressed-no-mp3-$SAMPLE_DATA_DIR.tbz" "$SAMPLE_DATA_DIR"
+tar --exclude $EXCLUDE_FILES -cjf "../compressed-no-mp3-$SAMPLE_DATA_DIR.tbz" "$SAMPLE_DATA_DIR"
 
 echo "Building new sample data archive compressed-no-mp3-$SAMPLE_DATA_DIR.tar.7z..."
-tar cf - "$SAMPLE_DATA_DIR" | 7za a -si "../compressed-no-mp3-$SAMPLE_DATA_DIR.tar.7z"
+tar --exclude $EXCLUDE_FILES -cf - "$SAMPLE_DATA_DIR" | 7za a -si "../compressed-no-mp3-$SAMPLE_DATA_DIR.tar.7z"
 
 cd .. # get out of the tmp-work-dir
 rm -r "$WORK_DIR"
