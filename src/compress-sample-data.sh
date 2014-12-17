@@ -23,7 +23,7 @@ EXCLUDE_FILES='\._*'
 if [ -z "$1" ]; then
     echo "No sample data specified."
     read -r -p "Do you want to download the 1.9 sample data? [yN] "
-    [[ "$REPLY" = [Yy] ]] && download=http://www.magentocommerce.com/downloads/assets/1.9.0.0/magento-sample-data-1.9.0.0.tar.bz2
+    [[ "$REPLY" = [Yy] ]] && download=http://www.magentocommerce.com/downloads/assets/1.9.1.0/magento-sample-data-1.9.1.0.tar.bz2
 
 elif echo "$1" | grep -q '^https\?:'; then
     download="$1"
